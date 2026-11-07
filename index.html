@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMIT Batch 22 - JavaScript Assignment 03</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        h1 { color: #333; text-align: center; }
+        h2 { color: #555; border-bottom: 2px solid #eee; padding-bottom: 10px; }
+        .container { margin: 20px 0; }
+        .question { margin: 15px 0; padding: 10px; border: 1px solid #ddd; border-radius: 5px; background: #f8f9fa; }
+        .btn { display: inline-block; padding: 8px 16px; margin: 5px; background: #007bff; color: white; text-decoration: none; border-radius: 4px; font-size: 0.9em; }
+        .btn:hover { background: #0056b3; }
+        .btn:focus { outline: 2px solid #ffd700; outline-offset: 2px; }
+        .question-output { margin-top: 10px; padding: 10px; background: #e9ecef; border-radius: 4px; white-space: pre-wrap; font-family: monospace; font-size: 0.85em; }
+        footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee; text-align: center; color: #666; font-size: 0.9em; }
+    </style>
+</head>
+<body>
+    <h1>SMIT Batch 22 - JavaScript Assignment 03</h1>
+    <h2>Arrays, Loops, Flags & Problem Solving</h2>
+
+    <div class="container">
+        <h3>Assignment Information</h3>
+        <p><strong>Institute:</strong> Saylani Mass IT Training (SMIT)</p>
+        <p><strong>Batch:</strong> Batch 22</p>
+        <p><strong>Trainer:</strong> Sir Jaffar Aman</p>
+        <p><strong>Reference Book:</strong> A Smarter Way to Learn JavaScript</p>
+        <p><strong>Chapters:</strong> 15–20</p>
+        <p><strong>Total Marks:</strong> 100</p>
+    </div>
+
+    <div class="container">
+        <h3>Assignment Description</h3>
+        <p>This assignment covers 20 questions on JavaScript arrays, loops, flags, and problem solving. Click a question number below to run its program. Each question runs independently.</p>
+    </div>
+
+    <div class="container">
+        <h3>Questions</h3>
+        <ol>
+            <li><button class="btn" onclick="loadQuestion(1)">Question 01</a></button> - Counting Generator: Print numbers from 1 to 100 using a for loop</li>
+            <li><button class="btn" onclick="loadQuestion(2)">Question 02</a></button> - Reverse Counting: Print numbers from 50 down to 1 using a reverse loop</li>
+            <li><button class="btn" onclick="loadQuestion(3)">Question 03</a></button> - Even & Odd Number Generator: Print even and odd numbers separately between 1 and 50</li>
+            <li><button class="btn" onclick="loadQuestion(4)">Question 04</a></button> - Multiplication Table: Ask user for a number and generate its multiplication table from 1 to 10</li>
+            <li><button class="btn" onclick="loadQuestion(5)">Question 05</a></button> - Sum of Natural Numbers: Ask user for N and calculate sum from 1 to N</li>
+            <li><button class="btn" onclick="loadQuestion(6)">Question 06</a></button> - Display Array Elements: Display eight student names with position numbers</li>
+            <li><button class="btn" onclick="loadQuestion(7)">Question 07</a></button> - Find Largest & Smallest: Find largest and smallest in [45, 12, 89, 3, 67, 22, 91, 10]</li>
+            <li><button class="btn" onclick="loadQuestion(8)">Question 08</a></button> - Reverse an Array: Display fruits array in reverse order</li>
+            <li><button class="btn" onclick="loadQuestion(9)">Question 09</a></button> - Filter Passing Students: Filter marks >= 50 from [85, 42, 67, 30, 90, 55, 25, 78]</li>
+            <li><button class="btn" onclick="loadQuestion(10)">Question 10</a></button> - Sum & Average of Array: Calculate total and average of [1200, 850, 430, 1600, 990]</li>
+            <li><button class="btn" onclick="loadQuestion(11)">Question 11</a></button> - Student Name Search: Search for a name in ["Ali", "Ahmed", "Sara", "Hamza", "Ayesha"]</li>
+            <li><button class="btn" onclick="loadQuestion(12)">Question 12</a></button> - Find a Number: Search for a number in [10, 25, 40, 55, 70, 85, 100] and show its index</li>
+            <li><button class="btn" onclick="loadQuestion(13)">Question 13</a></button> - Filter Numbers: Separate positive, negative, and zero from [12, -5, 0, 18, -9, 25, 0, -3, 40]</li>
+            <li><button class="btn" onclick="loadQuestion(14)">Question 14</a></button> - Remove Duplicate Numbers: Create unique array from [10, 20, 10, 30, 20, 40, 30, 50]</li>
+            <li><button class="btn" onclick="loadQuestion(15)">Question 15</a></button> - Star Triangle: Print nested star triangle pattern</li>
+            <li><button class="btn" onclick="loadQuestion(16)">Question 16</a></button> - Reverse Star Triangle: Print reverse star triangle pattern</li>
+            <li><button class="btn" onclick="loadQuestion(17)">Question 17</a></button> - Number Triangle: Print number triangle 1, 12, 123, 1234, 12345</li>
+            <li><button class="btn" onclick="loadQuestion(18)">Question 18</a></button> - Multiplication Table Grid: Generate tables from 2 to 5</li>
+            <li><button class="btn" onclick="loadQuestion(19)">Question 19</a></button> - Student Result Analyzer: Analyze student marks and calculate results</li>
+            <li><button class="btn" onclick="loadQuestion(20)">Question 20</a></button> - Mini Shopping Cart: Calculate bill with discount for selected product</li>
+        </ol>
+    </div>
+
+    <div class="container">
+        <h3>Question Output</h3>
+        <div id="question-output" class="question-output">Select a question to run its program.</div>
+    </div>
+
+    <footer>
+        SMIT Batch 22 - JavaScript Assignment 03 | Arrays, Loops, Flags & Problem Solving
+    </footer>
+
+    <script>
+        // Store question file paths
+        const questionFiles = [
+            "",                                  // 0 (unused)
+            "question-01.js",
+            "question-02.js",
+            "question-03.js",
+            "question-04.js",
+            "question-05.js",
+            "question-06.js",
+            "question-07.js",
+            "question-08.js",
+            "question-09.js",
+            "question-10.js",
+            "question-11.js",
+            "question-12.js",
+            "question-13.js",
+            "question-14.js",
+            "question-15.js",
+            "question-16.js",
+            "question-17.js",
+            "question-18.js",
+            "question-19.js",
+            "question-20.js"
+        ];
+
+        // Currently loaded script element
+        let currentScript = null;
+
+        function loadQuestion(questionNum) {
+            // Remove previously loaded script
+            if (currentScript && currentScript.parentNode) {
+                currentScript.parentNode.removeChild(currentScript);
+                currentScript = null;
+            }
+
+            // Clear output area
+            const outputDiv = document.getElementById('question-output');
+            outputDiv.textContent = "Loading question " + questionNum + "...";
+
+            // Load the question script
+            const src = questionFiles[questionNum];
+            if (src) {
+                currentScript = document.createElement('script');
+                currentScript.src = src;
+                currentScript.onload = function() {
+                    outputDiv.textContent = "Question " + questionNum + " loaded and executed successfully.";
+                    // The script's output (document.write, alert, console.log) will appear in the browser
+                    // Reset after a short delay
+                    setTimeout(function() {
+                        outputDiv.textContent = "Select a question to run its program.";
+                    }, 3000);
+                };
+                currentScript.onerror = function() {
+                    outputDiv.textContent = "Error loading question " + questionNum + " file. Make sure " + src + " exists.";
+                };
+                document.body.appendChild(currentScript);
+            }
+        }
+
+        // Initialize: show instructions
+        document.getElementById('question-output').textContent = "Select a question above to run its program.";
+    </script>
+</body>
+</html>
